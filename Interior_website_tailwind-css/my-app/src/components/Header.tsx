@@ -1,7 +1,6 @@
 "use client"; 
 
 import React, { useEffect, useState } from 'react';
-import clsx from 'clsx'; // Import clsx
 import ThemeToggler from './ThemeToggler';
 import Logo from './Logo';
 import Nav from './nav';
@@ -14,7 +13,11 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      window.scrollY > 50 ? setheader(true) : setheader(false);
+      if (window.scrollY > 50) {
+        setheader(true);
+      } else {
+        setheader(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -23,12 +26,19 @@ const Header = () => {
     };
   }, []);
 
+  // Define the background class based on path
+  const backgroundClass = pathName === "/" ? 'bg-[#fff]' : '';
+
+  // Define the dynamic header class based on scroll state
+  const headerClass = header
+    ? "py-4 bg-tertiary-DEEFAULT shadow-lg dark:bg-accent"
+    : "py-6 dark:bg-transparent";
+
+  // Combine headerClass with backgroundClass for the final class
+  const finalHeaderClass = `${headerClass} sticky top-0 z-50 transition-all ${backgroundClass}`;
+
   return (
-    <header className={clsx(
-      header ? "py-4 bg-tertiary-DEEFAULT shadow-lg dark:bg-accent" : "py-6 dark:bg-transparent", 
-      "sticky top-0 z-50 transition-all", 
-      { 'bg-[#fff]': pathName === '/' }
-    )}>
+    <header className={finalHeaderClass}>
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}

@@ -12,7 +12,13 @@ const links = [
   { name: "Contact", path: "/Contact" },
 ];
 
-const Nav = ({ containerStyles, linkStyles, underlineStyles }: any) => {
+interface NavProps {
+  containerStyles: string;
+  linkStyles: string;
+  underlineStyles: string;
+}
+
+const Nav = ({ containerStyles, linkStyles, underlineStyles }: NavProps) => {
   const path = usePathname();
 
   return (

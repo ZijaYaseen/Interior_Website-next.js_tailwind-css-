@@ -1,6 +1,7 @@
 "use client"; 
 
 import React, { useEffect, useState } from 'react';
+import clsx from 'clsx'; // Import clsx
 import ThemeToggler from './ThemeToggler';
 import Logo from './Logo';
 import Nav from './nav';
@@ -23,10 +24,11 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${header ? 
-      "py-4 bg-tertiary-DEEFAULT shadow-lg dark:bg-accent" : 
-      "py-6 dark:bg-transparent"
-    } sticky top-0 z-50 transition-all ${(pathName === "/" ? 'bg-[#fff]' : '')}`}>
+    <header className={clsx(
+      header ? "py-4 bg-tertiary-DEEFAULT shadow-lg dark:bg-accent" : "py-6 dark:bg-transparent", 
+      "sticky top-0 z-50 transition-all", 
+      { 'bg-[#fff]': pathName === '/' }
+    )}>
       <div className="container mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}

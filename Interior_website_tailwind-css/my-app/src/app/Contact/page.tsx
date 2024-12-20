@@ -7,10 +7,6 @@ import { Button } from "@/components/ui/button";
 import { TbArrowUpRight } from "react-icons/tb";
 import { useState } from "react";
 
-function classNames(...classes:any){
-  return classes.filter(Boolean).join(' ')
-}
-
 export default function ContactPage (){
 
   const [agreed, setAgreed] = useState(false)

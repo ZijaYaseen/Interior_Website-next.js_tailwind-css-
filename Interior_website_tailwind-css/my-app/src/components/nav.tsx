@@ -15,7 +15,7 @@ const links = [
 interface NavProps {
   containerStyles: string;
   linkStyles: string;
-  underlineStyles: string;
+  underlineStyles?: string;
 }
 
 const Nav = ({ containerStyles, linkStyles, underlineStyles }: NavProps) => {

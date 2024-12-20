@@ -10,7 +10,8 @@ const Aboutpage = () => {
   return (
     <div className="">
       <div className='bg-[url("/whoweare.jpg")] bg-center bg-cover'>
-        <h1 className='container py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64'>Who are we?</h1>
+        <h1 className='container py-32 text-6xl font-semibold text-black tracking-widest text-center lg:py-64'>
+          Who are we?</h1>
       </div>
 
       <div className='pt-4 px-5 lg:px-10'>
@@ -78,7 +79,7 @@ const Aboutpage = () => {
           <h1 className="text-4xl font-bold tracking-wider text-center uppercase">Team</h1>
         </div>
 
-        <div className="grid py-8 grid-cols-3 gap-16 px-5 lg:px-10">
+        <div className="grid py-8 lg:grid-cols-3 gap-16 px-5 lg:px-10">
           {/* 1st team member */}
           <div className="border-2 border-primary">
             <div className="p-4 text-center bg-gray-100 aspect-square dark:bg-tertiary-DEEFAULT -m-0.5 transition hover:-translate-y-3 hover:-translate-x-3">
